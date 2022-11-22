@@ -1,0 +1,29 @@
+<div class="box">
+    <div class="center">
+        <img id="img" src="../../assets/images/bnk.webp" alt="">
+    </div>
+
+    <h2>LOGIN</h2>
+<h6>{{aim}}</h6>
+    <form>
+
+
+        <div class="userbox">
+             <input #acno type="text" id="acno1" name="" required="" ><!-- [placeholder]="account" -->
+            <label>Username</label>
+        </div>
+        <div class="userbox">
+            <input #pswd type="password" id="pswd1" name="" required="">
+            <label>password</label>
+        </div>
+        <a class="id" href="#">Forgot Password</a>
+
+        <button  type="button" (click)="login(acno,pswd)" id="loginButton ">login</button> <br><br>
+
+
+    </form>
+    <br>
+
+    <span class="loginlink">Don't have an account ?<a href="reg.html">Sign up</a>
+
+<!-- </div> -->
