@@ -9,16 +9,16 @@
 
 
         <div class="userbox">
-             <input #acno type="text" id="acno1" name="" required="" ><!-- [placeholder]="account" -->
+             <input [(ngModel)]="acno" [ngModelOptions]="{standalone: true}" type="text" id="acno1" name="acno" required="" ><!-- [placeholder]="account" -->
             <label>Username</label>
         </div>
         <div class="userbox">
-            <input #pswd type="password" id="pswd1" name="" required="">
+            <input [(ngModel)]="pswd" [ngModelOptions]="{standalone: true}" type="password" id="pswd1" name="" required="">
             <label>password</label>
         </div>
         <a class="id" href="#">Forgot Password</a>
 
-        <button  type="button" (click)="login(acno,pswd)" id="loginButton ">login</button> <br><br>
+        <button  type="button" (click)="login()" id="loginButton ">login</button> <br><br>
 
 
     </form>
