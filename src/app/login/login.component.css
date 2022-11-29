@@ -4,7 +4,7 @@ html{
 
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Antonio:wght@500&family=Combo&family=Comfortaa:wght@300&family=Dosis:wght@200;500&family=Island+Moments&family=Kolker+Brush&family=Montserrat:ital,wght@0,300;1,100&family=Playfair+Display:ital,wght@1,500&family=Quicksand:wght@600&family=Qwitcher+Grypen:wght@400;700&display=swap');
 
-body{
+.body{
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;

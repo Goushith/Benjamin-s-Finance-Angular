@@ -1,1 +1,89 @@
-<p>dashboard works!</p>
+<div class="parentclass">
+    <div style="text-align: center;">
+        <h1 >Welcome {{user}}</h1>
+        <a  routerLink="/Transaction">Transaction History</a><br><br>
+
+    </div>
+    
+    <div class="child">
+        <div class="box">
+            <div class="center">
+                <img id="img" src="../../assets/images/bnk.webp" alt="">
+            </div>
+        
+        
+            <h2>DEPOSIT</h2>
+        
+            <form onsubmit="return  false" >
+        
+        
+                
+                <div class="userbox">
+                    <input [(ngModel)]="acno" type="text" id="depo_accno"  name="acno" required>
+                    <label>Account No</label>
+                </div>
+                <div class="userbox">
+                    <input [(ngModel)]="pswd" type="password" id="depo_pass" name="pswd" required>
+                    <label>Password</label>
+                </div>
+                <div class="userbox">
+                    <input [(ngModel)]="amount" type="text" id="depo_username"  name="username" required>
+                    <label>Amount</label>
+                </div>
+        
+               <!-- &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" required><label style="color:white ;">Accept all terms and conditions</label> <br> -->
+        
+                <button type="submit" (click)="deposit()" id="signinButton ">
+                    
+                    DEPOSIT</button> <br> <br>
+        
+                <!-- <span class="loginlink">Already have an account ?<a class="link" routerLink=""></a></span> -->
+        
+        
+        
+            </form>
+        </div>
+    </div>
+    <div class="child">
+
+
+        <div class="box1">
+            <div class="center">
+                <img id="img" src="../../assets/images/bnk.webp" alt="">
+            </div>
+        
+        
+            <h2>WITHDRAW</h2>
+        
+            <form onsubmit="return  false" >
+        
+        
+               
+                <div class="userbox">
+                    <input [(ngModel)]="acno1" type="text" id="with_accno"  name="acno" required>
+                    <label>Account No</label>
+                </div>
+                <div class="userbox">
+                    <input [(ngModel)]="pswd1" type="password" id="with_pass" name="pswd" required>
+                    <label>Password</label>
+                </div>
+                <div class="userbox">
+                    <input [(ngModel)]="amount1" type="text" id="with_amount"  name="username" required>
+                    <label>Amount</label>
+                </div>
+               <!-- &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" required><label style="color:white ;">Accept all terms and conditions</label> <br> -->
+        
+                <button type="submit" (click)="withdraw()" id="signinButton ">
+                    
+                    WITHDRAW</button> <br> <br>
+        
+                <!-- <span class="loginlink">Already have an account ?<a class="link" routerLink="">WITHDRAW</a></span> -->
+        
+        
+        
+            </form>
+        </div>
+
+
+    </div>
+<!-- </div> -->

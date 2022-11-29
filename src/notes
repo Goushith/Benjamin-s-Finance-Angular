@@ -1,4 +1,4 @@
-               ###         ANGULAR
+            ###    ANGULAR
 
 
 Basic Building Blocks : 
@@ -58,3 +58,36 @@ Angular routing
         {
             path:'',component:loginComponent
         }
+
+
+
+    Angular services
+
+            to hold redunt data
+
+            to create new service -ng g s -service_name
+
+           4) Dependecy injection
+            To share data between two dependent classes
+
+            constructor(private ds :DataService)
+
+
+
+
+    5)Angular directives to manipulate DOM
+
+    a)component directives(array)
+    b)structural directives (table)
+
+    -> *ngFor
+
+
+    6) Angular Forms 
+        a)Template driven Forms
+        b)Model Driven Forms(First design model in ts file)
+            1)Reactive Forms
+            Formgroup ,array ,control
+            for advanced validation
+            import from reactive forms Module(in app.module.ts)
+

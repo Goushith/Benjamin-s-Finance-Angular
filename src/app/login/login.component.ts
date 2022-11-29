@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-login',
@@ -13,14 +15,8 @@ acno=""
 pswd=""
 
 
-//data base
-userDetails:any={
-  1000:{acno:1000,username:"Amal",password:1000,balance:1000},
-  1001:{acno:1001,username:"Amal",password:1001,balance:1000},
-  1002:{acno:1002,username:"Amal",password:1002,balance:1000},
 
-}
-  constructor() { }
+  constructor(private ds:DataService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -40,27 +36,48 @@ pswdChange(event:any){
   
 }
 
-  login(){
-    // alert('Login Clicked')
+
+login(){
     var acno=this.acno;
     var pswd=this.pswd;
-    var userDetails=this.userDetails;
+    var userDetails=this.ds.userDetails;
 
+    const result=this.ds.login(acno,pswd);
 
-    if(acno in userDetails){
-    if(pswd==userDetails[acno]['password']){
-      alert('login Successfull')
+    if(result){
+      alert("Login Successful");
+      this.router.navigateByUrl('dashboard')
     }else{
-      alert('invalid password')
+      alert('login Failed')
     }
-
-
-
-  }
-else{
-  alert('invalid user details')
 }
-  }
+
+
+
+
+
+//   login(){
+//     // alert('Login Clicked')
+//     var acno=this.acno;
+//     var pswd=this.pswd;
+//     var userDetails=this.ds.userDetails;
+
+
+//     if(acno in userDetails){
+//     if(pswd==userDetails[acno]['password']){
+//       alert('login Successfull')
+//       this.router.navigateByUrl('dashboard')
+//     }else{
+//       alert('invalid password')
+//     }
+
+
+
+//   }
+// else{
+//   alert('invalid user details')
+// }
+//   }
 
 
 // login(a:any,b:any){

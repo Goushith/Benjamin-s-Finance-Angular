@@ -1,34 +1,34 @@
 <div class="box">
     <div class="center">
-        <img id="img" src="bnk.webp" alt="">
+        <img id="img" src="../../assets/images/bnk.webp" alt="">
     </div>
 
 
     <h2>REGISTRATION FORM</h2>
 
-    <form onsubmit="return  false" >
+    <form [formGroup]="registrationForm" >
 
 
         <div class="userbox">
-            <input type="text" id="username"  name="" required>
+            <input [(ngModel)]="uname" type="text" id="username"  name="username" required>
             <label>Username</label>
         </div>
         <div class="userbox">
-            <input type="text" id="accno"  name="" required>
+            <input [(ngModel)]="acno" type="text" id="accno"  name="acno" required>
             <label>Account No</label>
         </div>
         <div class="userbox">
-            <input type="password" id="pass" name="d" required>
+            <input [(ngModel)]="pswd" type="password" id="pass" name="pswd" required>
             <label>Password</label>
         </div>
 
        &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" required><label style="color:white ;">Accept all terms and conditions</label> <br>
 
-        <button type="submit" onclick="addAccount()" id="signinButton ">
+        <button type="submit" (click)="register()" id="signinButton ">
             
             Sign in</button> <br> <br>
 
-        <span class="loginlink">Already have an account ?<a class="link" href="index.html">login</a></span>
+        <span class="loginlink">Already have an account ?<a class="link" routerLink="">login</a></span>
 
 
 

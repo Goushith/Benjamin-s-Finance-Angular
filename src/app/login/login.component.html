@@ -1,3 +1,4 @@
+
 <div class="box">
     <div class="center">
         <img id="img" src="../../assets/images/bnk.webp" alt="">
@@ -9,11 +10,11 @@
 
 
         <div class="userbox">
-             <input [(ngModel)]="acno" [ngModelOptions]="{standalone: true}" type="text" id="acno1" name="acno" required="" ><!-- [placeholder]="account" -->
-            <label>Username</label>
+             <input [(ngModel)]="acno"  type="text" id="acno1" name="acno" required="" ><!-- [placeholder]="account" -->
+            <label>Account no</label>
         </div>
         <div class="userbox">
-            <input [(ngModel)]="pswd" [ngModelOptions]="{standalone: true}" type="password" id="pswd1" name="" required="">
+            <input [(ngModel)]="pswd"  type="password" id="pswd1" name="pswd" required="">
             <label>password</label>
         </div>
         <a class="id" href="#">Forgot Password</a>
@@ -24,6 +25,7 @@
     </form>
     <br>
 
-    <span class="loginlink">Don't have an account ?<a href="reg.html">Sign up</a>
-
+    <span class="loginlink">Don't have an account ?<a routerLink="register">Sign up</a>
+    
+<!-- </div> -->
 <!-- </div> -->
