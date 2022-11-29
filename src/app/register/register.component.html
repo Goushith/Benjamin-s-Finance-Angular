@@ -10,16 +10,25 @@
 
 
         <div class="userbox">
-            <input [(ngModel)]="uname" type="text" id="username"  name="username" required>
+            <input formControlName="uname" type="text" id="username"  name="username"  required>
             <label>Username</label>
         </div>
-        <div class="userbox">
-            <input [(ngModel)]="acno" type="text" id="accno"  name="acno" required>
-            <label>Account No</label>
+        <div *ngIf="this.registrationForm.get('uname')?.errors && this.registrationForm.get('uname')?.touched"  style="color: red;">
+            Invalid Username
         </div>
         <div class="userbox">
-            <input [(ngModel)]="pswd" type="password" id="pass" name="pswd" required>
+            <input formControlName="acno" type="text" id="accno"  name="acno" >
+            <label>Account No</label>
+        </div>
+        <div *ngIf="this.registrationForm.get('acno')?.errors && this.registrationForm.get('acno')?.touched"  style="color: red;">
+            Invalid Account Number
+        </div>
+        <div class="userbox">
+            <input formControlName="pswd" type="password" id="pass" name="pswd" >
             <label>Password</label>
+        </div>
+        <div *ngIf="this.registrationForm.get('pswd')?.errors && this.registrationForm.get('pswd')?.touched"  style="color: red;">
+            Invalid Password
         </div>
 
        &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" required><label style="color:white ;">Accept all terms and conditions</label> <br>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../service/data.service';
 
@@ -16,8 +17,13 @@ pswd=""
 
 
 
-  constructor(private ds:DataService,private router:Router) { }
+  constructor(private fb:FormBuilder, private ds:DataService,private router:Router) { }
 
+loginForm=this.fb.group({
+  acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
+  pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]],
+})
+  
   ngOnInit(): void {
   }
 
@@ -38,9 +44,12 @@ pswdChange(event:any){
 
 
 login(){
-    var acno=this.acno;
-    var pswd=this.pswd;
+    var acno=this.loginForm.value.acno;
+    var pswd=this.loginForm.value.pswd;
     var userDetails=this.ds.userDetails;
+if(this.loginForm.valid){
+
+
 
     const result=this.ds.login(acno,pswd);
 
@@ -50,9 +59,12 @@ login(){
     }else{
       alert('login Failed')
     }
+  }else{
+    alert('invalid Form')
+  }
 }
 
-
+}
 
 
 
@@ -103,4 +115,4 @@ login(){
 // }
 
 
-}
+

@@ -6,20 +6,28 @@
 
     <h2>LOGIN</h2>
 <h6>{{aim}}</h6>
-    <form>
+
+    <form [formGroup]="loginForm">
 
 
         <div class="userbox">
-             <input [(ngModel)]="acno"  type="text" id="acno1" name="acno" required="" ><!-- [placeholder]="account" -->
+             <input formControlName="acno"  type="text" id="acno1" name="acno" required="" ><!-- [placeholder]="account" -->
             <label>Account no</label>
         </div>
+        <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched"  style="color: red;">
+            Invalid Account Number
+        </div>
+
         <div class="userbox">
-            <input [(ngModel)]="pswd"  type="password" id="pswd1" name="pswd" required="">
+            <input formControlName="pswd"  type="password" id="pswd1" name="pswd" required="">
             <label>password</label>
+        </div>
+        <div *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched"  style="color: red;">
+            Invalid Account Number
         </div>
         <a class="id" href="#">Forgot Password</a>
 
-        <button  type="button" (click)="login()" id="loginButton ">login</button> <br><br>
+        <button  type="submit" (click)="login()" id="loginButton ">login</button> <br><br>
 
 
     </form>

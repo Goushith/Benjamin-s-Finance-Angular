@@ -14,23 +14,34 @@
         
             <h2>DEPOSIT</h2>
         
-            <form onsubmit="return  false" >
+            <form [formGroup]="DepositForm" >
         
         
                 
                 <div class="userbox">
-                    <input [(ngModel)]="acno" type="text" id="depo_accno"  name="acno" required>
+                    <input formControlName="acno" type="text" id="depo_accno"  name="acno" required>
                     <label>Account No</label>
                 </div>
+
+                <div *ngIf="this.DepositForm.get('acno')?.errors && this.DepositForm.get('acno')?.touched"  style="color: red;">
+                    Invalid Account Number
+                </div>
+
                 <div class="userbox">
-                    <input [(ngModel)]="pswd" type="password" id="depo_pass" name="pswd" required>
+                    <input  formControlName="pswd" type="password" id="depo_pass" name="pswd" required>
                     <label>Password</label>
                 </div>
+                <div *ngIf="this.DepositForm.get('pswd')?.errors && this.DepositForm.get('pswd')?.touched"  style="color: red;">
+                    Invalid Password
+                </div>
+
                 <div class="userbox">
-                    <input [(ngModel)]="amount" type="text" id="depo_username"  name="username" required>
+                    <input  formControlName="amount" type="text" id="depo_username"  name="username" required>
                     <label>Amount</label>
                 </div>
-        
+                <div *ngIf="this.DepositForm.get('amount')?.errors && this.DepositForm.get('amount')?.touched"  style="color: red;">
+                    Invalid Amount
+                </div>
                <!-- &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" required><label style="color:white ;">Accept all terms and conditions</label> <br> -->
         
                 <button type="submit" (click)="deposit()" id="signinButton ">
@@ -55,21 +66,33 @@
         
             <h2>WITHDRAW</h2>
         
-            <form onsubmit="return  false" >
+            <form [formGroup]="WithdrawForm" >
         
         
                
                 <div class="userbox">
-                    <input [(ngModel)]="acno1" type="text" id="with_accno"  name="acno" required>
+                    <input formControlName="acno" type="text" id="with_accno"  name="acno" required>
                     <label>Account No</label>
                 </div>
-                <div class="userbox">
-                    <input [(ngModel)]="pswd1" type="password" id="with_pass" name="pswd" required>
-                    <label>Password</label>
+
+
+                <div *ngIf="this.WithdrawForm.get('acno')?.errors && this.WithdrawForm.get('acno')?.touched"  style="color: red;">
+                    Invalid Account Number
                 </div>
                 <div class="userbox">
-                    <input [(ngModel)]="amount1" type="text" id="with_amount"  name="username" required>
+                    <input formControlName="pswd" type="password" id="with_pass" name="pswd" required>
+                    <label>Password</label>
+                </div>
+
+                <div *ngIf="this.WithdrawForm.get('pswd')?.errors && this.WithdrawForm.get('pswd')?.touched"  style="color: red;">
+                    Invalid Password
+                </div>
+                <div class="userbox">
+                    <input formControlName="amount" type="text" id="with_amount"  name="username" required>
                     <label>Amount</label>
+                </div>
+                <div *ngIf="this.WithdrawForm.get('amount')?.errors && this.WithdrawForm.get('amount')?.touched"  style="color: red;">
+                    Invalid Amount
                 </div>
                <!-- &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" required><label style="color:white ;">Accept all terms and conditions</label> <br> -->
         
