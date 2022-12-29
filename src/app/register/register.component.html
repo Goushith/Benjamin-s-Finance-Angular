@@ -1,45 +1,62 @@
-<div class="box">
-    <div class="center">
-        <img id="img" src="../../assets/images/bnk.webp" alt="">
+<section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card card-registration my-4">
+                    <div class="row g-0">
+                        <div class="col-xl-6 d-none d-xl-block">
+                            <img src="https://cdn.dribbble.com/users/1484145/screenshots/14190768/bank_loan_4x.png"
+                                alt="Sample photo" class="img-fluid" />
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card-body p-md-5 text-black">
+                                <h3 class="mb-5 text-uppercase">Bank registration form</h3>
+
+                                <form [formGroup]="registrationForm">
+
+
+
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form3Example8">USERNAME</label>
+
+                                        <input formControlName="uname" type="text" id="username"  name="username" id="form3Example8" class="form-control form-control-lg" />
+
+                                    </div>
+                                    <p *ngIf="this.registrationForm.get('uname')?.errors && this.registrationForm.get('uname')?.touched"  style="color: red;">
+                                        Invalid Username
+                                    </p>
+
+                                    <div class="form-outline mb-4">
+
+                                        <label class="form-label" for="form3Example9">ACCOUNT NO</label>
+                                        <input formControlName="acno" type="text" id="accno"  name="acno" id="form3Example9" class="form-control form-control-lg" />
+
+                                    </div>
+
+                                    <div *ngIf="this.registrationForm.get('acno')?.errors && this.registrationForm.get('acno')?.touched"  style="color: red;">
+                                        Invalid Account Number
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+
+                                        <label class="form-label" for="form3Example90">PASSWORD</label>
+                                        <input formControlName="pswd" type="password" id="pass" name="pswd" id="form3Example90" class="form-control form-control-lg" />
+
+                                    </div>
+                                    <div *ngIf="this.registrationForm.get('pswd')?.errors && this.registrationForm.get('pswd')?.touched"  style="color: red;">
+                                        Invalid Password
+                                    </div>
+
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <button routerLink="" type="button" class="btn btn-light btn-lg">Login</button>
+                                        <button type="submit" (click)="register()" id="signinButton " class="btn btn-warning btn-lg ms-2">Register</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <h2>REGISTRATION FORM</h2>
-
-    <form [formGroup]="registrationForm" >
-
-
-        <div class="userbox">
-            <input formControlName="uname" type="text" id="username"  name="username"  required>
-            <label>Username</label>
-        </div>
-        <div *ngIf="this.registrationForm.get('uname')?.errors && this.registrationForm.get('uname')?.touched"  style="color: red;">
-            Invalid Username
-        </div>
-        <div class="userbox">
-            <input formControlName="acno" type="text" id="accno"  name="acno" >
-            <label>Account No</label>
-        </div>
-        <div *ngIf="this.registrationForm.get('acno')?.errors && this.registrationForm.get('acno')?.touched"  style="color: red;">
-            Invalid Account Number
-        </div>
-        <div class="userbox">
-            <input formControlName="pswd" type="password" id="pass" name="pswd" >
-            <label>Password</label>
-        </div>
-        <div *ngIf="this.registrationForm.get('pswd')?.errors && this.registrationForm.get('pswd')?.touched"  style="color: red;">
-            Invalid Password
-        </div>
-
-       &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" required><label style="color:white ;">Accept all terms and conditions</label> <br>
-
-        <button type="submit" (click)="register()" id="signinButton ">
-            
-            Sign in</button> <br> <br>
-
-        <span class="loginlink">Already have an account ?<a class="link" routerLink="">login</a></span>
-
-
-
-    </form>
-</div>
+</section>

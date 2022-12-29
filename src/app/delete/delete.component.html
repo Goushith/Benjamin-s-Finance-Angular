@@ -1,0 +1,10 @@
+
+<div *ngIf="item">
+<h1>
+    Do you Really want to delete this Account {{item}}
+</h1>
+
+<button class="btn btn-success "  (click)="delete()" > YES </button>
+<button class="btn btn-danger" (click)="cancel()" > NO </button>
+
+</div>

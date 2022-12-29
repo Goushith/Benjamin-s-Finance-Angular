@@ -1,16 +1,21 @@
 <div class="parentclass">
     <div style="text-align: center;">
         <h1 >Welcome {{user}}</h1>
+        
+        <button class="btn btn-warning " style="float: right;" (click)="logOut()" > Logout </button>
+        <button class="btn btn-danger " style="float: right;" (click)="delete()" > delete</button>
+
         <a  routerLink="/Transaction">Transaction History</a><br><br>
+        <p style="float: right;"> Date :{{sdate | date:'short'}}</p>
 
     </div>
-    
-    <div class="child">
+    <app-delete [item]="acno" (onCancel)=onCancel() (onDelete)="onDelete($event)"></app-delete>
+    <div class="child" [ngClass]="acno? 'style1' : '' ">
         <div class="box">
             <div class="center">
                 <img id="img" src="../../assets/images/bnk.webp" alt="">
             </div>
-        
+      
         
             <h2>DEPOSIT</h2>
         
@@ -42,20 +47,19 @@
                 <div *ngIf="this.DepositForm.get('amount')?.errors && this.DepositForm.get('amount')?.touched"  style="color: red;">
                     Invalid Amount
                 </div>
-               <!-- &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" required><label style="color:white ;">Accept all terms and conditions</label> <br> -->
         
                 <button type="submit" (click)="deposit()" id="signinButton ">
                     
                     DEPOSIT</button> <br> <br>
         
-                <!-- <span class="loginlink">Already have an account ?<a class="link" routerLink=""></a></span> -->
+                
         
         
         
             </form>
         </div>
     </div>
-    <div class="child">
+    <div class="child" [ngClass]="acno? 'style1' : '' ">
 
 
         <div class="box1">
@@ -94,13 +98,11 @@
                 <div *ngIf="this.WithdrawForm.get('amount')?.errors && this.WithdrawForm.get('amount')?.touched"  style="color: red;">
                     Invalid Amount
                 </div>
-               <!-- &nbsp;&nbsp;&nbsp;&nbsp; <input type="checkbox" value="" required><label style="color:white ;">Accept all terms and conditions</label> <br> -->
         
                 <button type="submit" (click)="withdraw()" id="signinButton ">
                     
                     WITHDRAW</button> <br> <br>
         
-                <!-- <span class="loginlink">Already have an account ?<a class="link" routerLink="">WITHDRAW</a></span> -->
         
         
         
@@ -109,4 +111,3 @@
 
 
     </div>
-<!-- </div> -->

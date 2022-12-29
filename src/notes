@@ -1,4 +1,4 @@
-            ###    ANGULAR
+            ###  ANGULAR
 
 
 Basic Building Blocks : 
@@ -67,7 +67,7 @@ Angular routing
 
             to create new service -ng g s -service_name
 
-           4) Dependecy injection
+4) Dependecy injection
             To share data between two dependent classes
 
             constructor(private ds :DataService)
@@ -91,3 +91,12 @@ Angular routing
             for advanced validation
             import from reactive forms Module(in app.module.ts)
 
+local storage :
+    -setitem: 
+    -getitem:
+    -removeitem:
+
+
+    parent to child communication / child to parent communication 
+        dashboard ->parent
+        delete ->child

@@ -17,7 +17,7 @@ uname="";
 
 //registration model
 registrationForm=this.fb.group({
-  uname:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+  uname:['',[Validators.required,Validators.pattern('[a-z A-Z]*')]],
   acno:['',[Validators.required,Validators.pattern('[0-9]*')]],
   pswd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]]
 })
@@ -40,15 +40,13 @@ registrationForm=this.fb.group({
     if(this.registrationForm.valid){
 
     
+      // console.log(this.registrationForm.get('username')?.errors);
+      this.ds.register(acno,uname,pswd)
+      .subscribe((result:any)=>{
+        alert(result.message);
+        this.router.navigateByUrl('')
+      })
 
-    const result=this.ds.register(acno,uname,pswd);
-    if(result){
-      alert('register successful')
-      this.router.navigateByUrl('')
-    }else{
-      alert('User already registred')
-      this.router.navigateByUrl('register')
-    }
     }else{
       alert('invalid Form')
     }
