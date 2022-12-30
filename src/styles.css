@@ -14,3 +14,9 @@ body,
 .intro {
   height: 100%;
 }
+html,
+body,
+.login-container{
+  background-image: url(https://i.postimg.cc/MpLpwrCN/pexels-pixabay-259251.jpg);
+  /* filter: blur(8px); */
+}
