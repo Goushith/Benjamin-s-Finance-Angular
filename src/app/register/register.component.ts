@@ -45,11 +45,13 @@ registrationForm=this.fb.group({
       .subscribe((result:any)=>{
         alert(result.message);
         this.router.navigateByUrl('')
-      })
-
-    }else{
-      alert('invalid Form')
-    }
+    },
+    result=>{
+      
+      
+      alert(result.error.message)
+    })
+  }
   }
 
 }

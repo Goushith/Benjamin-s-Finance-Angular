@@ -1,4 +1,4 @@
-html{
+/* html{
     height: 100%;
 }
 
@@ -20,7 +20,6 @@ html{
     left: 10%;
     width: 400px;
     padding: 40px;
-    /* transform: translate(-50%,-50%); */
     background: rgba(0, 123, 255, 0.915);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
@@ -35,7 +34,6 @@ html{
     left: 60%;
     width: 400px;
     padding: 40px;
-    /* transform: translate(-50%,-50%); */
     background: rgba(0, 123, 255, 0.915);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
@@ -132,9 +130,7 @@ position: relative;
         text-decoration:none;
         color: rgb(0, 0, 0);
     }
-/* .link{
-    margin-left: 140px ;
-} */
+
 
 .loginlink{
   margin-left: 40px;
@@ -194,20 +190,14 @@ a:hover{
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
-    /* box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 100px #03e9f4; */
+
 }
 
 .box1 button:hover{
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
-    /* box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 100px #03e9f4; */
+
 }
 
 
@@ -244,4 +234,70 @@ img{
     padding: 0;
     color: #fff;
     text-align: center;
+}
+ */
+
+
+
+/* ========================================================== */
+
+.style1{
+    opacity: 0;
+  }
+  
+
+
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-logo{
+    position: relative;
+    margin-left: -41.5%;
+}
+.login-logo img{
+    position: absolute;
+    width: 20%;
+    margin-top: 19%;
+    background: #282726;
+    border-radius: 4.5rem;
+    padding: 5%;
+}
+.login-form-1{
+    padding: 9%;
+    background:#282726;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color:#fff;
+}
+.login-form-2{
+    padding: 9%;
+    background: #919191;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    margin-bottom:12%;
+    color: #fff;
+}
+.btnSubmit{
+    font-weight: 600;
+    width: 50%;
+    color: #282726;
+    background-color: #fff;
+    border: none;
+    border-radius: 1.5rem;
+    padding:2%;
+}
+.btnForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btnForgetPwd:hover{
+    text-decoration:none;
+    color:#fff;
 }
