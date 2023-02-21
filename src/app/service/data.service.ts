@@ -30,6 +30,8 @@ currentAcno=""
       //DATABASE
       localStorage.setItem('DataBase',JSON.stringify(this.userDetails))
       }
+
+      
       if(this.currentUser){
       //currentuser
       localStorage.setItem('currentUser',JSON.stringify(this.currentUser))
@@ -74,26 +76,7 @@ userDetails:any={
     }
 
 return this.http.post('http://localhost:3000/register',data)
-  //let userDetails=this.userDetails;
 
-  // if(acno in userDetails){
-  //   return false;
-  // }
-  // else{
-  //   userDetails[acno]={
-  //     acno,
-  //     username,
-  //     password,
-  //     balance:0,
-  //     transaction:[]
-
-      
-  //   }
-  //   this.saveDetails()
-  //   console.log(userDetails);
-    
-  //   return true
-  // }
 }
 
 
@@ -103,9 +86,6 @@ login(acno:any,pswd:any){
       acno,
       pswd
     }
-
-
-
   return this.http.post('http://localhost:3000/login',data)
 
 

@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
   user=""
   sdate:any=" "
   constructor(private fb:FormBuilder, private ds:DataService,private router:Router) { 
+
     if(localStorage.getItem('currentUser')){
     this.user=JSON.parse(localStorage.getItem('currentUser')||'')
     // console.log(this.user);
@@ -41,6 +42,8 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    
     if(!localStorage.getItem('currentAcno')){
       alert('login first');
       this.router.navigateByUrl(''); 

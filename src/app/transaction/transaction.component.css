@@ -18,6 +18,15 @@ body,
     white-space: nowrap;
     overflow: hidden;
   }
+
+
+  .home{
+    background-color: #fff;
+    text-decoration: none;
+    padding: 6px;
+    border-radius: 8px;
+  }
+
   
   .mask-custom {
     background: rgba(24, 24, 16, .2);

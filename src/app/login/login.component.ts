@@ -43,15 +43,15 @@ pswdChange(event:any){
 }
 
 
+
+
+
+
 login(){
     var acno=this.loginForm.value.acno;
     var pswd=this.loginForm.value.pswd;
     // var userDetails=this.ds.userDetails;
-
-    
 if(this.loginForm.valid){
-
-
 
 this.ds.login(acno,pswd)
 .subscribe((result:any)=>{
